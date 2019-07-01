@@ -14,7 +14,7 @@ add_filter('locale', 'Admin_lang_change_func');
 
 function Admin_lang_change_func() {
 	if (strpos($_SERVER['REQUEST_URI'], '/wp-admin/') === 0) {
-		return 'ja';
+		return 'en';
 	} else {
 		return 'en';
 	}
