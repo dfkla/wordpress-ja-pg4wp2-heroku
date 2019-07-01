@@ -10,9 +10,9 @@ This project is a template for installing and running [WordPress](http://wordpre
 
 Use the Deploy to Heroku button, or use the old fashioned way described below.
 
-[htpasswd Generator is here.](https://macminiosx.github.io/passwd-generator/)
+[htpasswd Generator is here.](http://www.htaccesstools.com/htpasswd-generator/)
 
-<a href="https://heroku.com/deploy?template=https://github.com/macminiosx/wordpress-ja-pg4wp2-heroku/tree/master">
+<a href="https://heroku.com/deploy?template=https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku/tree/master">
   <img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">
 </a>
 
@@ -27,7 +27,7 @@ Clone the repo with heroku
 
 cd into the project and add a git remote pointing at the original source,
 
-    $ git remote add origin https://github.com/macminiosx/wordpress-ja-pg4wp2-heroku/
+    $ git remote add origin https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku/
 
 pull from the remote origin
 
@@ -35,7 +35,7 @@ pull from the remote origin
 
 ## Clone the repository from Github
 
-    $ git clone git@github.com:macminiosx/wordpress-ja-pg4wp2-heroku.git
+    $ git clone git@github.com:elasa-Sites/wordpress-ja-pg4wp2-heroku.git
 
 With the [Heroku gem](http://devcenter.heroku.com/articles/heroku-command), create your app
 
