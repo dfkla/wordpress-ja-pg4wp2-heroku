@@ -23,5 +23,7 @@ require valid-user
 Require all denied
 </Files>
 
-SetEnv TZ Asia/Tokyo
+ss:$apr1$bzVyT3RQ$Ko1eG9YDW0G6Wl4TQrkih/
+
+SetEnv TZ Asia/Tehran
 
