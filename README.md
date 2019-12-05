@@ -109,10 +109,14 @@ Create a new branch for any configuration/setup changes needed
     $ git checkout -b production
     
     
-all in Two !!:
-
-```git clone git@github.com:elasa-Sites/wordpress-ja-pg4wp2-heroku.git
-   r=$RANDOM; echo $r
+all in  Three !!:
+```
+   sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+   heroku login 
+```
+``` 
+    git clone https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku
+    r=$RANDOM; echo $r
     heroku create ss-wp$r --ssh-git --stack cedar-14
     heroku addons:create heroku-postgresql:hobby-dev -a ss-wp$r # -a <app Name> which here ss-wp12 is appname
 ```
@@ -136,10 +140,34 @@ Promote the database (replace COLOR with the color name from the above output)
     git init
     git add .
     git remote add origin https://git.heroku.com/ss-wp$r.git
+    git config user.name "someone"
+    git config user.email "someone@someplace.com"
     git commit -am "start"
     git checkout -b production
     heroku git:remote -a ss-wp$r
+    git push heroku production:master
     
+or by this all in one:
+```
+#!/bin/bash 
+sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+heroku login 
+#another mthod
+
+#git clone https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku
+git clone https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku
+cd h*
+sudo git init
+sudo git add .
+ sudo git add -f */*/*
+sudo git commit -m "initial commit"
+
+sudo heroku create --buildpack https://github.com/heroku/heroku-buildpack-php --region eu
+
+sudo git push heroku master
+```
+
+
 
 Deploy to Heroku
 
