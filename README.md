@@ -78,6 +78,18 @@ Store unique keys and salts in Heroku environment variables. Wordpress can provi
       SECURE_AUTH_SALT='put your unique phrase here' \
       LOGGED_IN_SALT='put your unique phrase here' \
       NONCE_SALT='put your unique phrase here'
+or use this:
+```
+heroku config:set AUTH_KEY='^%RH5z>.rM=9A+oH(6n,`+F99Z|3V@_ArpWy%{;+y|pFcCuKwl/<VP!#4oJ0+p2t' \
+  SECURE_AUTH_KEY='(<ofl_w;1k(tpsPF<].GW|p@rq|=0Mc<d~u[N8S!1C|{obdleN{+1&(;/mTTD0yh' \
+  LOGGED_IN_KEY='Thwf<)Ey^9EdtpxD?Z5TlO9-Pc|v)~La1BBRPk=Ey|%jPUc%A!SxVo6lxQ6uitK ' \
+  NONCE_KEY='BNx YjS{|[jtE,eHXh.m0{F=86uW<92),uU8}Yk)dz)j@bXqj@mEt!q|^.HU-<<w' \
+  AUTH_SALT='y1CFU=<RNO5Y_Io-}aovd}L:o-I{HdNMrt/=RR peqTn/%_@#U3uD^~]=8#z(`a' \
+  SECURE_AUTH_SALT='Ez~bty^ZCop.RV_)&zVb3:U MeDx1+m>Yz@m#>M5wpIk|5hoRQ~Z&m`r mJd69(U' \
+  LOGGED_IN_SALT='~R]Xaq<WE-j9Bc-ggAhQZdE|p]q bBolv$]YXjIu:7P;/)WP}R3Ys,*>%4Eqv[,/' \
+  NONCE_SALT='KR~5 NWctd2l^f>(f9~oxhMT?I7JcTM]^>NEzKZL.U+9yc^2hZujh~PALNs$Vdua'
+```
+
 
 Create .htpasswd
 
@@ -125,6 +137,23 @@ After deployment WordPress has a few more steps to setup and thats it!
 Because a file cannot be written to Heroku's file system, updating and installing plugins or themes should be done locally and then pushed to Heroku.
 
 ## Updating
+
+pull the entire app into local:
+`heroku git:clone -a ancient-reef-55168`
+or
+`heroku git:clone -a <your app name>`
+then
+`cd <your app name`
+`git remote add origin  https://git.heroku.com/ancient-reef-55168.git`
+or 
+`git remote add origin  https://git.heroku.com/<your app name>.git`
+finally:
+` git pull origin master`
+
+Or you could do it by `git clone git@heroku.com:<your app name>.git`
+
+**Note**: if use deply button (<img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">) you can not use heroku git:clone -a <your app name>` or ` git pull origin master`
+  
 
 Updating your WordPress version is just a matter of merging the updates into
 the branch created from the installation.
