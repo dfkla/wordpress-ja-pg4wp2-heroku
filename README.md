@@ -15,12 +15,16 @@ Use the Deploy to Heroku button, or use the old fashioned way described below.
 <a href="https://heroku.com/deploy?template=https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku/tree/master">
   <img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">
 </a>
+
+### Install Heoku Cli
+
+You've deployed an application to Heroku and when you attempt to clone the project you receive the error 'You appear to have cloned an empty repository'
 ### Install Heoku Cli
 ```
-sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
-heroku login 
-
+   sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+   heroku login 
 ```
+
 
 ### Use the Deploy to Heroku button Issue
 
@@ -49,7 +53,7 @@ With the [Heroku gem](http://devcenter.heroku.com/articles/heroku-command), crea
     r=$RANDOM; echo $r
     heroku create ss-wp$r --ssh-git --stack cedar-14
     
-Tget this log
+get this log
 
 ```
     Creating strange-turtle-1234... done, stack is cedar
