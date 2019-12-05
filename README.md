@@ -18,8 +18,7 @@ Use the Deploy to Heroku button, or use the old fashioned way described below.
 
 ### Install Heoku Cli
 
-You've deployed an application to Heroku and when you attempt to clone the project you receive the error 'You appear to have cloned an empty repository'
-### Install Heoku Cli
+
 ```
    sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
    heroku login 
