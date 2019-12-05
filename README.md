@@ -175,9 +175,7 @@ all in  Three !!:
     heroku create ss-wp$r --ssh-git --stack cedar-14
     heroku addons:create heroku-postgresql:hobby-dev -a ss-wp$r # -a <app Name> which here ss-wp12 is appname
 ```
-Promote the database (replace COLOR with the color name from the above output)
 
-    heroku pg:promote HEROKU_POSTGRESQL_COLOR -a ss-wp$r # -a <app Name> which here ss-wp@r is
 
     heroku addons:add sendgrid:starter -a ss-wp$r # -a <app Name> which here ss-wp@r is
 
