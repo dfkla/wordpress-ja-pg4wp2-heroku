@@ -199,6 +199,7 @@ all in  Three !!:
     git commit -am "start"
     git checkout -b production
     heroku git:remote -a ss-wp$r
+    heroku stack:set container --remote origin
     git push heroku production:master
     
 ```
