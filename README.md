@@ -194,12 +194,12 @@ all in  Three !!:
     git init
     git add .
     git remote add origin https://git.heroku.com/ss-wp$r.git
-    git config user.name "someone"
-    git config user.email "someone@someplace.com"
+    #git config user.name "someone"
+    #git config user.email "someone@someplace.com"
     git commit -am "start"
     git checkout -b production
     heroku git:remote -a ss-wp$r
-    heroku stack:set container --remote origin
+    #heroku stack:set heroku-18 --remote origin
     git push heroku production:master
     
 ```
