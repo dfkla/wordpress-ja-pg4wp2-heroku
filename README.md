@@ -94,6 +94,10 @@ heroku config:set AUTH_KEY='^%RH5z>.rM=9A+oH(6n,`+F99Z|3V@_ArpWy%{;+y|pFcCuKwl/<
 Create .htpasswd
 
     $ echo "USERNAME:CRYPT PASSWORD" > .htpasswd
+    git init
+    git add .
+    git commit -am "start"
+    
 
 Deploy to Heroku
 
