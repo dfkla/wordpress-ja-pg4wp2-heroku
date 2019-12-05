@@ -139,7 +139,9 @@ Because a file cannot be written to Heroku's file system, updating and installin
 ## Updating
 
 pull the entire app into local:
-`heroku git:clone -a ancient-reef-55168`
+`
+heroku git:clone -a ancient-reef-55168
+`
 or
 `heroku git:clone -a <your app name>`
 then
@@ -152,7 +154,7 @@ finally:
 
 Or you could do it by `git clone git@heroku.com:<your app name>.git`
 
-**Note**: if use deply button (<img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">) you can not use heroku git:clone -a <your app name>` or ` git pull origin master`
+**Note**: if use deply button (<img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">) you can not use ```heroku git:clone -a <your app name>``` or ``` git pull origin master```
   
 
 Updating your WordPress version is just a matter of merging the updates into
