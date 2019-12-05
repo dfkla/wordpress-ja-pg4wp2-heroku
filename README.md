@@ -182,6 +182,7 @@ Promote the database (replace COLOR with the color name from the above output)
   LOGGED_IN_SALT='~R]Xaq<WE-j9Bc-ggAhQZdE|p]q bBolv$]YXjIu:7P;/)WP}R3Ys,*>%4Eqv[,/' \
   NONCE_SALT='KR~5 NWctd2l^f>(f9~oxhMT?I7JcTM]^>NEzKZL.U+9yc^2hZujh~PALNs$Vdua' -a ss-wp$r  # -a <app Name> which here ss-wp@r is
 ```
+```
     echo "USERNAME:CRYPT PASSWORD" > .htpasswd
     git init
     git add .
@@ -193,7 +194,7 @@ Promote the database (replace COLOR with the color name from the above output)
     heroku git:remote -a ss-wp$r
     git push heroku production:master
     
-
+```
 
 ## Usage
 
