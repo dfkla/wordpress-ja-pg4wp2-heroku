@@ -170,27 +170,24 @@ all in  Three !!:
    heroku login 
 ```
 ``` 
-    git clone https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku
+ git clone https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku
     r=$RANDOM; echo $r
     heroku create ss-wp$r --ssh-git --stack cedar-14
     heroku addons:create heroku-postgresql:hobby-dev -a ss-wp$r # -a <app Name> which here ss-wp12 is appname
-```
+
+heroku addons:add sendgrid:starter -a ss-wp$r # -a <app Name> which here ss-wp@r is
 
 
-    heroku addons:add sendgrid:starter -a ss-wp$r # -a <app Name> which here ss-wp@r is
+heroku config:set AUTH_KEY='^%RH5z>.rM=9A+oH(6n,`+F99Z|3V@_ArpWy%{;+y|pFcCuKwl/<VP!#4oJ0+p2t' \
+SECURE_AUTH_KEY='(<ofl_w;1k(tpsPF<].GW|p@rq|=0Mc<d~u[N8S!1C|{obdleN{+1&(;/mTTD0yh' \
+LOGGED_IN_KEY='Thwf<)Ey^9EdtpxD?Z5TlO9-Pc|v)~La1BBRPk=Ey|%jPUc%A!SxVo6lxQ6uitK ' \
+NONCE_KEY='BNx YjS{|[jtE,eHXh.m0{F=86uW<92),uU8}Yk)dz)j@bXqj@mEt!q|^.HU-<<w' \
+AUTH_SALT='y1CFU=<RNO5Y_Io-}aovd}L:o-I{HdNMrt/=RR peqTn/%_@#U3uD^~]=8#z(`a' \
+SECURE_AUTH_SALT='Ez~bty^ZCop.RV_)&zVb3:U MeDx1+m>Yz@m#>M5wpIk|5hoRQ~Z&m`r mJd69(U' \
+LOGGED_IN_SALT='~R]Xaq<WE-j9Bc-ggAhQZdE|p]q bBolv$]YXjIu:7P;/)WP}R3Ys,*>%4Eqv[,/' \
+NONCE_SALT='KR~5 NWctd2l^f>(f9~oxhMT?I7JcTM]^>NEzKZL.U+9yc^2hZujh~PALNs$Vdua' -a ss-wp$r  # -a <app Name> which here ss-wp@r is
 
-
-    heroku config:set AUTH_KEY='^%RH5z>.rM=9A+oH(6n,`+F99Z|3V@_ArpWy%{;+y|pFcCuKwl/<VP!#4oJ0+p2t' \
-    SECURE_AUTH_KEY='(<ofl_w;1k(tpsPF<].GW|p@rq|=0Mc<d~u[N8S!1C|{obdleN{+1&(;/mTTD0yh' \
-    LOGGED_IN_KEY='Thwf<)Ey^9EdtpxD?Z5TlO9-Pc|v)~La1BBRPk=Ey|%jPUc%A!SxVo6lxQ6uitK ' \
-    NONCE_KEY='BNx YjS{|[jtE,eHXh.m0{F=86uW<92),uU8}Yk)dz)j@bXqj@mEt!q|^.HU-<<w' \
-    AUTH_SALT='y1CFU=<RNO5Y_Io-}aovd}L:o-I{HdNMrt/=RR peqTn/%_@#U3uD^~]=8#z(`a' \
-    SECURE_AUTH_SALT='Ez~bty^ZCop.RV_)&zVb3:U MeDx1+m>Yz@m#>M5wpIk|5hoRQ~Z&m`r mJd69(U' \
-    LOGGED_IN_SALT='~R]Xaq<WE-j9Bc-ggAhQZdE|p]q bBolv$]YXjIu:7P;/)WP}R3Ys,*>%4Eqv[,/' \
-    NONCE_SALT='KR~5 NWctd2l^f>(f9~oxhMT?I7JcTM]^>NEzKZL.U+9yc^2hZujh~PALNs$Vdua' -a ss-wp$r  # -a <app Name> which here ss-wp@r is
-
-```
-    echo "USERNAME:CRYPT PASSWORD" > .htpasswd
+echo "USERNAME:CRYPT PASSWORD" > .htpasswd
     git init
     git add .
     git remote add origin https://git.heroku.com/ss-wp$r.git
@@ -201,8 +198,8 @@ all in  Three !!:
     heroku git:remote -a ss-wp$r
     #heroku stack:set heroku-18 --remote origin
     git push heroku production:master
-    
-```
+ ```
+ 
 
 ## Usage
 
