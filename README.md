@@ -15,6 +15,12 @@ Use the Deploy to Heroku button, or use the old fashioned way described below.
 <a href="https://heroku.com/deploy?template=https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku/tree/master">
   <img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy">
 </a>
+### Install Heoku Cli
+```
+sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+heroku login 
+
+```
 
 ### Use the Deploy to Heroku button Issue
 
@@ -109,63 +115,6 @@ Create a new branch for any configuration/setup changes needed
     $ git checkout -b production
     
     
-all in  Three !!:
-```
-   sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
-   heroku login 
-```
-``` 
-    git clone https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku
-    r=$RANDOM; echo $r
-    heroku create ss-wp$r --ssh-git --stack cedar-14
-    heroku addons:create heroku-postgresql:hobby-dev -a ss-wp$r # -a <app Name> which here ss-wp12 is appname
-```
-Promote the database (replace COLOR with the color name from the above output)
-
-    heroku pg:promote HEROKU_POSTGRESQL_COLOR -a ss-wp$r # -a <app Name> which here ss-wp@r is
-
-    heroku addons:add sendgrid:starter -a ss-wp$r # -a <app Name> which here ss-wp@r is
-
-```
-  heroku config:set AUTH_KEY='^%RH5z>.rM=9A+oH(6n,`+F99Z|3V@_ArpWy%{;+y|pFcCuKwl/<VP!#4oJ0+p2t' \
-  SECURE_AUTH_KEY='(<ofl_w;1k(tpsPF<].GW|p@rq|=0Mc<d~u[N8S!1C|{obdleN{+1&(;/mTTD0yh' \
-  LOGGED_IN_KEY='Thwf<)Ey^9EdtpxD?Z5TlO9-Pc|v)~La1BBRPk=Ey|%jPUc%A!SxVo6lxQ6uitK ' \
-  NONCE_KEY='BNx YjS{|[jtE,eHXh.m0{F=86uW<92),uU8}Yk)dz)j@bXqj@mEt!q|^.HU-<<w' \
-  AUTH_SALT='y1CFU=<RNO5Y_Io-}aovd}L:o-I{HdNMrt/=RR peqTn/%_@#U3uD^~]=8#z(`a' \
-  SECURE_AUTH_SALT='Ez~bty^ZCop.RV_)&zVb3:U MeDx1+m>Yz@m#>M5wpIk|5hoRQ~Z&m`r mJd69(U' \
-  LOGGED_IN_SALT='~R]Xaq<WE-j9Bc-ggAhQZdE|p]q bBolv$]YXjIu:7P;/)WP}R3Ys,*>%4Eqv[,/' \
-  NONCE_SALT='KR~5 NWctd2l^f>(f9~oxhMT?I7JcTM]^>NEzKZL.U+9yc^2hZujh~PALNs$Vdua' -a ss-wp$r  # -a <app Name> which here ss-wp@r is
-```
-    echo "USERNAME:CRYPT PASSWORD" > .htpasswd
-    git init
-    git add .
-    git remote add origin https://git.heroku.com/ss-wp$r.git
-    git config user.name "someone"
-    git config user.email "someone@someplace.com"
-    git commit -am "start"
-    git checkout -b production
-    heroku git:remote -a ss-wp$r
-    git push heroku production:master
-    
-or by this all in one:
-```
-#!/bin/bash 
-sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
-heroku login 
-#another mthod
-
-#git clone https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku
-git clone https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku
-cd h*
-sudo git init
-sudo git add .
- sudo git add -f */*/*
-sudo git commit -m "initial commit"
-
-sudo heroku create --buildpack https://github.com/heroku/heroku-buildpack-php --region eu
-
-sudo git push heroku master
-```
 
 
 
@@ -205,6 +154,46 @@ Deploy to Heroku
       * [new branch]    production -> master
 
 After deployment WordPress has a few more steps to setup and thats it!
+
+all in  Three !!:
+```
+   sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+   heroku login 
+```
+``` 
+    git clone https://github.com/elasa-Sites/wordpress-ja-pg4wp2-heroku
+    r=$RANDOM; echo $r
+    heroku create ss-wp$r --ssh-git --stack cedar-14
+    heroku addons:create heroku-postgresql:hobby-dev -a ss-wp$r # -a <app Name> which here ss-wp12 is appname
+```
+Promote the database (replace COLOR with the color name from the above output)
+
+    heroku pg:promote HEROKU_POSTGRESQL_COLOR -a ss-wp$r # -a <app Name> which here ss-wp@r is
+
+    heroku addons:add sendgrid:starter -a ss-wp$r # -a <app Name> which here ss-wp@r is
+
+```
+  heroku config:set AUTH_KEY='^%RH5z>.rM=9A+oH(6n,`+F99Z|3V@_ArpWy%{;+y|pFcCuKwl/<VP!#4oJ0+p2t' \
+  SECURE_AUTH_KEY='(<ofl_w;1k(tpsPF<].GW|p@rq|=0Mc<d~u[N8S!1C|{obdleN{+1&(;/mTTD0yh' \
+  LOGGED_IN_KEY='Thwf<)Ey^9EdtpxD?Z5TlO9-Pc|v)~La1BBRPk=Ey|%jPUc%A!SxVo6lxQ6uitK ' \
+  NONCE_KEY='BNx YjS{|[jtE,eHXh.m0{F=86uW<92),uU8}Yk)dz)j@bXqj@mEt!q|^.HU-<<w' \
+  AUTH_SALT='y1CFU=<RNO5Y_Io-}aovd}L:o-I{HdNMrt/=RR peqTn/%_@#U3uD^~]=8#z(`a' \
+  SECURE_AUTH_SALT='Ez~bty^ZCop.RV_)&zVb3:U MeDx1+m>Yz@m#>M5wpIk|5hoRQ~Z&m`r mJd69(U' \
+  LOGGED_IN_SALT='~R]Xaq<WE-j9Bc-ggAhQZdE|p]q bBolv$]YXjIu:7P;/)WP}R3Ys,*>%4Eqv[,/' \
+  NONCE_SALT='KR~5 NWctd2l^f>(f9~oxhMT?I7JcTM]^>NEzKZL.U+9yc^2hZujh~PALNs$Vdua' -a ss-wp$r  # -a <app Name> which here ss-wp@r is
+```
+    echo "USERNAME:CRYPT PASSWORD" > .htpasswd
+    git init
+    git add .
+    git remote add origin https://git.heroku.com/ss-wp$r.git
+    git config user.name "someone"
+    git config user.email "someone@someplace.com"
+    git commit -am "start"
+    git checkout -b production
+    heroku git:remote -a ss-wp$r
+    git push heroku production:master
+    
+
 
 ## Usage
 
