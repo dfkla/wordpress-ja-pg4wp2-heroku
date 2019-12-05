@@ -49,7 +49,7 @@ With the [Heroku gem](http://devcenter.heroku.com/articles/heroku-command), crea
     r=$RANDOM; echo $r
     heroku create ss-wp$r --ssh-git --stack cedar-14
     
-get this log
+Tget this log
 
 ```
     Creating strange-turtle-1234... done, stack is cedar
